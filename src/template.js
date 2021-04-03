@@ -1,7 +1,8 @@
 // generate the team
 const createTeam = team => {
+    let content = "";
     // Manager.html
-    const generateMgr = mgr => {
+    const generateMgr = manager => {
         return `
         <div class="card employee-card">
         <div class = "card-header">
@@ -19,7 +20,7 @@ const createTeam = team => {
         `;
     };
     // same format for engineer.html
-    const generateEng = eng => {
+    const generateEng = engineer => {
         return `
         <div class="card employee-card">
         <div class = "card-header">
@@ -38,7 +39,7 @@ const createTeam = team => {
     };
 
     // Intern.html
-    const generate = Int => {
+    const generateInt = intern => {
         return `
         <div class="card employee-card">
         <div class = "card-header">
@@ -55,6 +56,18 @@ const createTeam = team => {
         </div>
         `;
     };
+    
+    for (let i = 0; i < team.length; i++) {
+        if (team[i].getRole === "Manager") {
+            content += generateMgr(team[i]);
+        }
+        else if (team[i].getRole === "Engineer") {
+            content += generateEng(team[i]);
+        }
+        else {content += generateInt(team[i]);
+        }
+    }
+    return content;
 }
 
 module.exports = createTeam;
