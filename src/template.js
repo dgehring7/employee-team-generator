@@ -56,13 +56,13 @@ const createTeam = team => {
         </div>
         `;
     };
-    
+
     for (let i = 0; i < team.length; i++) {
         if (team[i].getRole === "Manager") {
             content += generateMgr(team[i]);
         }
         else if (team[i].getRole === "Engineer") {
-            content += generateEng(team[i]);
+            content += generateEng(team[i]); 
         }
         else {content += generateInt(team[i]);
         }
