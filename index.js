@@ -1,6 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const createTeam = require("./src/template");
+const Intern = require("./lib/Intern");
+const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
 
 // Array of questions for the user
 const  manQuestions = [
