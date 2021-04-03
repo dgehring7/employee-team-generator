@@ -18,7 +18,7 @@ const createTeam = team => {
         </div>
         `;
     };
-    // same format for engineer, intern 
+    // same format for engineer.html
     const generateEng = eng => {
         return `
         <div class="card employee-card">
@@ -37,6 +37,7 @@ const createTeam = team => {
         `;
     };
 
+    // Intern.html
     const generate = Int => {
         return `
         <div class="card employee-card">
@@ -55,3 +56,5 @@ const createTeam = team => {
         `;
     };
 }
+
+module.exports = createTeam;
