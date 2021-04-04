@@ -2,6 +2,9 @@
 
 # Description
 This project should create a list and id cards for a company. Starting with the manager, the app should collect the name, id, email, Github, office number, and school based on their role/position and user input.
+After the manager position is filled, the project should ask if the user would like to fill other positions ie. engineer and/or intern.
+If yes, the user will input data such as name, id, email, and Github for Engineers, and name, id, email, and school for interns.
+When the user is done entering employees, it should create a personel card with all inputted data
 
 # Usage
 
