@@ -119,7 +119,7 @@ function promptMgr() {
     });
 }
 
-// employeeList[employeeList.length] = new Intern(data.name, data.id, data.email, data.school);
+
 
 
 function promptEng() {
@@ -134,8 +134,15 @@ inquirer.prompt(engQuestions)
     });
 }
 
-// function promptInt() {
-
+function promptInt() {
+inquirer.prompt(intQuestions)
+    .then(data => {
+        console.log(data);
+        employeeList[employeeList.length] = new Intern(data.name, data.id, data.email, data.school);
+         if (data.role === "Yes, add an Intern")
+            // prompt Intern function
+            promptInt();
+    });
 }
 
 function writeData() {
