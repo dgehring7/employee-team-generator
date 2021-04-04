@@ -10,6 +10,13 @@ When the user is done entering employees, it should create a personel card with 
 
 Based on user input, this app will create an id card and list of employees for a company.
 
+ ## Installation
+
+  To install necessary dependencies run the following command:
+
+  npm i
+
+
 # Contributors
 
 Donald Gehring is a contibutor to this project.
