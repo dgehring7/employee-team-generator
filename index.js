@@ -113,21 +113,23 @@ function promptMgr() {
             promptInt();
         }
         else {
-            writeData()
+            // writeData();
         }
-            // prompt engineer function
-    });
-}
+    }
+)};
 
 
 function promptEng() {
 inquirer.prompt(engQuestions)
     .then(data => {
        console.log(data);
-       employeeList[employeeList.length] = new Engineer(data.name, data.id, data.email, data.github);
+       employeeList.push(new Engineer(data.name, data.id, data.email, data.github));
         if (data.role == "Yes, add an Engineer") {
             // prompt engineer function
             promptEng();
+        }
+        else {
+            // writeData();
         }
     });
 }
@@ -136,36 +138,38 @@ function promptInt() {
 inquirer.prompt(intQuestions)
     .then(data => {
         console.log(data);
-        employeeList[employeeList.length] = new Intern(data.name, data.id, data.email, data.school);
+        employeeList.push(new Intern(data.name, data.id, data.email, data.school));
+        console.log(employeeList);
          if (data.role === "Yes, add an Intern")
             // prompt Intern function
             promptInt();
+            // writeData();
     });
 }
 
-function writeData() {
-    let content = createTeam(employeeList);
-    let template = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        ${content}
-    </body>
-    </html>
-    `
-    fs.writeFile("./dist/index.html", template,  function(err) {
-        if (err){
-            throw new console.error("There was an error in writing.");
-        }
-        else{
-            console.log("success");
-        }
-    });
-}
+// function writeData() {
+//     let content = createTeam(employeeList);
+//     let template = `<!DOCTYPE html>
+//     <html lang="en">
+//     <head>
+//         <meta charset="UTF-8">
+//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//         <title>Document</title>
+//     </head>
+//     <body>
+//         ${content}
+//     </body>
+//     </html>
+//     `
+//     fs.writeFile("./dist/index.html", template, function(err) {
+//         if (err){
+//             throw new console.error("There was an error in writing.");
+//         }
+//         else{
+//             console.log("success");
+//         }
+//     });
+// }
 // called function to start entire process
 promptMgr();
